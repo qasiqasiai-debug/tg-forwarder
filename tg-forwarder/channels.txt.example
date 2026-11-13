@@ -1,0 +1,5 @@
+# По одному каналу в строке. Строки с # игнорируются.
+# Формы записи: @username, https://t.me/username, https://t.me/+инвайт, -1001234567890
+@durov
+https://t.me/telegram
+https://t.me/+AbCdEfGhIjKlMnOp

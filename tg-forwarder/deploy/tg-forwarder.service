@@ -1,0 +1,25 @@
+[Unit]
+Description=Telegram channels forwarder
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tgbot
+Group=tgbot
+WorkingDirectory=/opt/tg-forwarder
+EnvironmentFile=/opt/tg-forwarder/.env
+ExecStart=/opt/tg-forwarder/.venv/bin/python -m app
+Restart=always
+RestartSec=10
+# 78 = ошибка конфигурации/сессии: перезапуск не поможет
+RestartPreventExitStatus=78
+# Базовая защита
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/tg-forwarder
+
+[Install]
+WantedBy=multi-user.target

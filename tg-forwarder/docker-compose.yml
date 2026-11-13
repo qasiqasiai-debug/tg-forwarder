@@ -1,0 +1,11 @@
+services:
+  forwarder:
+    build: .
+    container_name: tg-forwarder
+    restart: unless-stopped   # поднимется сам после перезагрузки сервера
+    env_file: .env
+    environment:
+      DATA_DIR: /data
+      CHANNELS_FILE: /data/channels.txt
+    volumes:
+      - ./data:/data
