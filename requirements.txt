@@ -1,0 +1,6 @@
+telethon>=1.40,<2
+aiogram>=3.13,<4
+aiosqlite>=0.20
+python-dotenv>=1.0
+# необязательно, ускоряет шифрование MTProto (нужен компилятор):
+# cryptg
